@@ -1,4 +1,59 @@
-body {background-color:tan;}
-h1{color:green;}
+body{
+    background-color: black;
+}
 
+div.card{
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+div.card h1{
+    color: grey;
+    font-family: sans-serif;
+}
+
+div.card form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-template-areas: 
+    "labelPrincipal principal"
+    "labelRate rate"
+    "labelYears years"
+    "compute empty";
+}
+
+form label#lbp{
+    grid-area: labelPrincipal;
+}
+form input#principal{
+    grid-area: principal;
+}
+form label#lr{
+    grid-area: labelRate;
+}
+form div#ratecont{
+    grid-area: rate;
+    width: max-content;
+}
+form label#ly{
+    grid-area: labelYears;
+}
+
+form select#years{
+    grid-area: years;
+    width: max-content;
+}
+
+form input[type="button"]{
+    grid-area: compute;
+    margin-bottom: 10px;
+}
+footer{
+    margin-top: 10px;
+}
