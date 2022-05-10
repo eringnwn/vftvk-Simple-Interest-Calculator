@@ -8,12 +8,16 @@ function compute()
     let amount = document.getElementById("principal").value;
     let rate = document.getElementById("rate").value;
     let year = document.getElementById("years").value;
-
+    if (amount <= 0)
+    {
+        alert("Enter a positive number");
+        document.getElementById("principal").focus();
+        return false;
+    }
     let interest = ((amount*rate)/100)*year;
     year = new Date().getFullYear() + year;
     document.getElementById("result").innerHTML = `If you deposit <mark>${amount}</mark>, <br>
     at an interest rate of <mark>${rate}%</mark>. <br>
     You will receive an amount of <mark>${interest}</mark> <br>
-    in the year of <mark>${year}</mark>`
+    in the year of <mark>${year}</mark>`;
 }
-        
